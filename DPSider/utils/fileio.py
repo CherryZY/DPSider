@@ -44,9 +44,9 @@ class FileIO:
             return str(self.__file.readlines())
 
     def write(self, content):
+        logging.debug("[DPSider.utils.fileio.FileIO#write] in param{%s}", content)
         strItems = str(content)
         strItems = strItems.replace('\'', '\"')
-        logging.debug("write things: %s" % strItems)
         if self.__formate:
             strItems = json.dumps(strItems)
         self.__file.write(strItems)

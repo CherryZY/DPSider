@@ -7,6 +7,23 @@
 
 import scrapy
 
+'''
+店铺详情item
+'''
+class ShopDetail(scrapy.Item):
+    shopId = scrapy.Field()
+    shopMainImgs = scrapy.Field()
+    shopNavImgs = scrapy.Field()
+    shopName = scrapy.Field()
+    shopStar = scrapy.Field()
+    commentCount = scrapy.Field()
+    shopAddress = scrapy.Field()
+    shopOfficeHours = scrapy.Field()
+    shopPhoneNum = scrapy.Field()
+    shopGift = scrapy.Field()
+    shopDetailImgs = scrapy.Field()
+    shopDetailUrls = scrapy.Field()
+
 
 '''
 分类item

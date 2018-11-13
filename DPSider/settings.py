@@ -17,7 +17,11 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, lik
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddleware.useragent.UserAgentMiddleware': None,
     'DPSider.middlewares.DpsiderSpiderMiddleware': 400,
+    'scrapy.contrib.downloadermiddleware.retry.RetryMiddleware': 351,
 }
+# FEED_EXPORT_ENCODING = 'unicode'
+
+DOWNLOAD_DELAY = 10
 
 ITEM_PIPELINES = {'DPSider.pipelines.DpsiderPipeline': 200}
 MY_USER_AGENT = [

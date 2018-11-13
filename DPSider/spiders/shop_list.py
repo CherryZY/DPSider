@@ -46,7 +46,6 @@ class ShopListSpider(scrapy.Spider):
             return
         results = response.xpath('//div[@class="shop-list"]/li')
         for result in results:
-            logging.debug("====================================================================")
             shopMainInfo = result.xpath('./div[@class="shop-info shop-info_materials"]')
             # 店铺图片url
             picUrl = result.xpath('./a/img/@src').extract()
@@ -92,14 +91,9 @@ class ShopListSpider(scrapy.Spider):
             shopListItem['groupBuyUrl'] = groupBuyTextUrl
             shopListItem['commentCount'] = commentCount
             shopListItem['starCount'] = starCount
-            logging.debug("====================================================================")
             yield shopListItem
         # 递归遍历下一页
         page_urls = response.xpath('.//div[@class="pages"]/a[@title="下一页"]/@href')
-        suffix_url = page_urls.extract()[0]
-        yield scrapy.Request(url_dian_ping_prefix + suffix_url, callback=self.parse)
-
-
-
-
-
+        if page_urls and len(page_urls) > 0:
+            suffix_url = page_urls.extract()[0]
+            yield scrapy.Request(url_dian_ping_prefix + suffix_url, callback=self.parse)

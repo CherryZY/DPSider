@@ -11,21 +11,42 @@ from DPSider.utils.fileio import FileIO
 class DpsiderPipeline(object):
 
     __f = None
+    __spider = ""
     __items = {}
     __items_classify = []
     __items_areas = []
 
+    # 店铺列表页
+    __items_shop_list = []
+    # 店铺详情页
+    __items_shop_detail = []
+
     def __init__(self):
-        self.__f = FileIO(fileConfig['classFile'])
+        pass
 
     def __del__(self):
-        self.__items['shop_classify'] = self.__items_classify
-        self.__items['shop_area'] = self.__items_areas
-        # self.__f.write(self.__items)
+        if self.__items_classify and self.__items_areas and len(self.__items_classify) > 0:
+            self.__items['shop_classify'] = self.__items_classify
+            self.__items['shop_area'] = self.__items_areas
+            self.__f = FileIO(fileConfig['classFile'], "w+")
+            self.__f.write(self.__items)
+        if self.__items_shop_list and len(self.__items_shop_list) > 0:
+            self.__f = FileIO(fileConfig['listFile'])
+            self.__f.write(self.__items_shop_list)
+        if self.__items_shop_detail and len(self.__items_shop_detail) > 0:
+            self.__f = FileIO(fileConfig['detailFile'], "r+")
+            self.__f.write(self.__items_shop_detail)
+
 
     def process_item(self, item, spider):
-        logging.debug("[DPSider.pipelines.DpsiderPipeline] in param:{%s,%s}", item, spider)
-        # if item['type'] == 'classify':
-        #     self.__items_classify.append(item)
-        # elif item['type'] == 'area':
-        #     self.__items_areas.append(item)
+        self.__spider = spider.name
+        logging.debug("[DPSider.pipelines.DpsiderPipeline] in param:{%s,%s}", item, spider.name)
+        if spider.name == 'classify_list':
+            if item['type'] == 'classify':
+                self.__items_classify.append(item)
+            elif item['type'] == 'area':
+                self.__items_areas.append(item)
+        elif spider.name == 'shop_list':
+            self.__items_shop_list.append(item)
+        elif spider.name == 'shop_detail':
+            self.__items_shop_detail.append(item)

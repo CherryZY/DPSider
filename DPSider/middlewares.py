@@ -8,8 +8,28 @@
 from scrapy import signals
 from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
 import random
+from DPSider.utils.fileio import FileIO
+from DPSider.configs import fileConfig, logging, url_prefix
+import ast
+
+'''
+获取代理ip列表
+'''
+def get_proxy_ips_list():
+    f = FileIO(fileConfig['ips'])
+    result = f.read()
+    # logging.debug(result)
+    ip_dict = ast.literal_eval(result)
+    ip_array = ip_dict['result']
+    ips = []
+    for ip in ip_array:
+        ips.append(ip['ip:port'])
+    return ips
 
 
+'''
+中间件
+'''
 class DpsiderSpiderMiddleware(UserAgentMiddleware):
 
     '''
@@ -24,8 +44,14 @@ class DpsiderSpiderMiddleware(UserAgentMiddleware):
         return s
 
     def process_request(self, request, spider):
+        # 设置User-Agent
         agent = random.choice(self.user_agent)
         request.headers['User-Agent'] = agent
+        # 设置代理
+        PROXY_IPS = get_proxy_ips_list()
+        ip = random.choice(PROXY_IPS)
+        logging.debug("redirect IP: " + ip)
+        # request.meta['proxy'] = url_prefix + ip
 
     def process_spider_input(self, response, spider):
         # Called for each response that goes through the spider

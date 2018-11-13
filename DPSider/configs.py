@@ -14,12 +14,16 @@ url_dian_ping_prefix = "https://www.dianping.com"
 
 # 文件配置
 fileConfig = {
-    "classFile" : "D:\workSpace\git_python\DPSider\class.json"
+    "ips" : "C:\\Users\\YUE.ZHANG\\Desktop\\DPSider\\DPSider\\ips.json",
+    "classFile" : "C:\\Users\\YUE.ZHANG\\Desktop\\DPSider\\DPSider\\class.json",
+    "listFile" : "C:\\Users\\YUE.ZHANG\\Desktop\\DPSider\\DPSider\\shopList.json",
+    "detailFile" : "C:\\Users\\YUE.ZHANG\\Desktop\\DPSider\\DPSider\\shopDetialList.json",
+    "exportLocation" : "C:\\Users\\YUE.ZHANG\\Desktop\\DPSider\\DPSider\\exportShopList.excel"
 }
 
 # 日志配置
 logConfig = {
-    "filename":  'D:\workSpace\git_python\DPSider\dpSpider_log.log',
+    "filename":  'C:\\Users\\YUE.ZHANG\\Desktop\\DPSider\\DPSider\\dpSpider_log.log',
     "filemode": 'w',
     "format": "%(message)s"
 }
