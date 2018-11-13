@@ -2,41 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d7e162e4-bff6-4281-976a-bd76fd38a1a3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/.idea/DPSider.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/configs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/enum/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/enum/filereadenum.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/items.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/middlewares.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/pipelines.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/spiders/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/spiders/classify_list.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/spiders/shop_detail.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/spiders/shop_list.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/DPSider/utils/fileio.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/class.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DPSider/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/DPSider/configs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/dpSpider_log.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/entry.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/items.py" beforeDir="false" afterPath="$PROJECT_DIR$/DPSider/items.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/middlewares.py" beforeDir="false" afterPath="$PROJECT_DIR$/DPSider/middlewares.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/DPSider/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/scrapy.cfg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DPSider/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/DPSider/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DPSider/spiders/shop_detail.py" beforeDir="false" afterPath="$PROJECT_DIR$/DPSider/spiders/shop_detail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/spiders/shop_list.py" beforeDir="false" afterPath="$PROJECT_DIR$/DPSider/spiders/shop_list.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DPSider/utils/fileio.py" beforeDir="false" afterPath="$PROJECT_DIR$/DPSider/utils/fileio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dpSpider_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/dpSpider_log.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entry.py" beforeDir="false" afterPath="$PROJECT_DIR$/entry.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,29 +20,8 @@
     <SUITE FILE_PATH="coverage/DPSider$fileio.coverage" NAME="fileio Coverage Results" MODIFIED="1542026926875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DPSider/utils" />
     <SUITE FILE_PATH="coverage/DPSider$middlewares.coverage" NAME="middlewares Coverage Results" MODIFIED="1542100545043" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DPSider" />
     <SUITE FILE_PATH="coverage/DPSider$configs.coverage" NAME="configs Coverage Results" MODIFIED="1542029011866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DPSider" />
+    <SUITE FILE_PATH="coverage/DPSider$entry.coverage" NAME="entry Coverage Results" MODIFIED="1542131112285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/DPSider$entry_point.coverage" NAME="entry_point Coverage Results" MODIFIED="1541953192456" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/DPSider/items.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="176">
-                    <caret line="8" selection-start-line="8" selection-end-line="8" />
-                    <folding>
-                      <marker date="1542090592592" expanded="true" signature="215:613" ph="..." />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-1929828337">
@@ -85,23 +36,23 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="json" value="2" />
+          <entry key="json" value="3" />
           <entry key="log" value="1" />
-          <entry key="py" value="18" />
+          <entry key="py" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JSON" value="2" />
+          <entry key="JSON" value="3" />
           <entry key="Log" value="1" />
-          <entry key="Python" value="18" />
+          <entry key="Python" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="json" value="1" />
           <entry key="log" value="1" />
-          <entry key="py" value="1932" />
+          <entry key="py" value="2682" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
@@ -110,7 +61,7 @@
           <entry key="JSON" value="1" />
           <entry key="Log" value="1" />
           <entry key="PLAIN_TEXT" value="15" />
-          <entry key="Python" value="1932" />
+          <entry key="Python" value="2682" />
         </counts>
       </usages-collector>
     </session>
@@ -154,31 +105,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/DPSider/spiders/shop_detail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2112">
-              <caret line="106" column="59" selection-start-line="106" selection-start-column="59" selection-end-line="106" selection-end-column="59" />
+            <state relative-caret-position="169">
+              <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
                 <element signature="e#236#545#0" />
-                <marker date="1542113582582" expanded="true" signature="594:1404" ph="..." />
-                <marker date="1542113582582" expanded="true" signature="1884:1890" ph="..." />
+                <element signature="e#1594#1621#0" />
+                <marker date="1542131162368" expanded="true" signature="594:1404" ph="..." />
+                <marker date="1542131162368" expanded="true" signature="1884:1890" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DPSider/middlewares.py">
+        <entry file="file://$PROJECT_DIR$/entry.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
+            <state relative-caret-position="190">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DPSider/configs.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="113">
+              <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DPSider/spiders/shop_list.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
               <folding>
-                <element signature="e#169#195#0" expanded="true" />
-                <marker date="1542113396462" expanded="true" signature="435:692" ph="..." />
-                <marker date="1542113396462" expanded="true" signature="745:749" ph="..." />
+                <element signature="e#24#37#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DPSider/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="15" column="68" lean-forward="true" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -186,29 +163,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dpSpider_log.log">
           <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="770">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ips.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
-              <folding>
-                <element signature="n#!!block;n#request#0;n#!!top" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DPSider/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="19" column="69" lean-forward="true" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
+            <state relative-caret-position="572">
+              <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -231,6 +187,7 @@
       <find>picUrl</find>
       <find>shopPath</find>
       <find>process_request</find>
+      <find>shopDetailImgs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -250,11 +207,12 @@
         <option value="$PROJECT_DIR$/DPSider/pipelines.py" />
         <option value="$PROJECT_DIR$/DPSider/items.py" />
         <option value="$PROJECT_DIR$/DPSider/ips.json" />
-        <option value="$PROJECT_DIR$/DPSider/configs.py" />
         <option value="$PROJECT_DIR$/ips.json" />
-        <option value="$PROJECT_DIR$/DPSider/spiders/shop_detail.py" />
+        <option value="$PROJECT_DIR$/DPSider/configs.py" />
         <option value="$PROJECT_DIR$/DPSider/middlewares.py" />
         <option value="$PROJECT_DIR$/DPSider/settings.py" />
+        <option value="$PROJECT_DIR$/entry.py" />
+        <option value="$PROJECT_DIR$/DPSider/spiders/shop_detail.py" />
       </list>
     </option>
   </component>
@@ -264,10 +222,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-2" />
-    <option name="y" value="19" />
-    <option name="width" value="1386" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="74" />
+    <option name="y" value="9" />
+    <option name="width" value="1135" />
     <option name="height" value="762" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -306,6 +264,12 @@
               <item name="DPSider" type="462c0819:PsiDirectoryNode" />
               <item name="DPSider" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DPSider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DPSider" type="462c0819:PsiDirectoryNode" />
+              <item name="DPSider" type="462c0819:PsiDirectoryNode" />
+              <item name="spiders" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -314,7 +278,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="E:/python/HttpProxyMiddleware-master/HttpProxyMiddleware-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HttpProxyMiddleware-master" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
@@ -339,7 +303,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.middlewares">
+  <component name="RunManager" selected="Python.entry">
     <configuration name="configs" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="DPSider" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -354,6 +318,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DPSider/configs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="entry" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="DPSider" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/entry.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -433,9 +419,11 @@
       <item itemvalue="Python.fileio" />
       <item itemvalue="Python.configs" />
       <item itemvalue="Python.middlewares" />
+      <item itemvalue="Python.entry" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.entry" />
         <item itemvalue="Python.middlewares" />
         <item itemvalue="Python.configs" />
         <item itemvalue="Python.fileio" />
@@ -461,7 +449,21 @@
       <option name="project" value="LOCAL" />
       <updated>1541953380593</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="update">
+      <created>1542115357467</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542115357467</updated>
+    </task>
+    <task id="LOCAL-00003" summary="update">
+      <created>1542115374944</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1542115374944</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView">
@@ -474,14 +476,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-2" y="19" width="1386" height="762" extended-state="0" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16515838" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16565809" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.44619423" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -491,7 +494,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.328" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.35238096" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.35157546" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -556,13 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DPSider/spiders/classify_list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.2/system/python_stubs/982336517/builtins.py" />
     <entry file="file://$PROJECT_DIR$/DPSider/utils/fileio.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -574,87 +570,105 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DPSider/spiders/shop_list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/scrapy/core/downloader/middleware.py" />
     <entry file="file://$PROJECT_DIR$/class.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
+        <state relative-caret-position="44">
           <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/site-packages/scrapy/core/downloader/middleware.py" />
-    <entry file="file://$PROJECT_DIR$/DPSider/configs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="16" column="72" lean-forward="true" selection-start-line="16" selection-start-column="72" selection-end-line="16" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DPSider/spiders/shop_detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2112">
-          <caret line="106" column="59" selection-start-line="106" selection-start-column="59" selection-end-line="106" selection-end-column="59" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-            <element signature="e#236#545#0" />
-            <marker date="1542113582582" expanded="true" signature="594:1404" ph="..." />
-            <marker date="1542113582582" expanded="true" signature="1884:1890" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DPSider/middlewares.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-          <folding>
-            <element signature="e#169#195#0" expanded="true" />
-            <marker date="1542113396462" expanded="true" signature="435:692" ph="..." />
-            <marker date="1542113396462" expanded="true" signature="745:749" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dpSpider_log.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="770">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ips.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="31" column="9" selection-start-line="31" selection-start-column="9" selection-end-line="31" selection-end-column="9" />
+        <state relative-caret-position="176">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
           <folding>
             <element signature="n#!!block;n#request#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/DPSider/configs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="18" column="34" lean-forward="true" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DPSider/spiders/classify_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-77">
+          <caret line="9" column="40" lean-forward="true" selection-start-line="9" selection-start-column="40" selection-end-line="9" selection-end-column="40" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DPSider/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="50" column="40" lean-forward="true" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+          <folding>
+            <element signature="e#169#195#0" expanded="true" />
+            <marker date="1542117459531" expanded="true" signature="435:692" ph="..." />
+            <marker date="1542117459531" expanded="true" signature="745:749" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DPSider/spiders/shop_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="54" column="57" selection-start-line="54" selection-start-column="57" selection-end-line="54" selection-end-column="57" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dpSpider_log.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="572">
+          <caret line="26" column="23" lean-forward="true" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DPSider/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="15" column="68" lean-forward="true" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/DPSider/items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="286">
+          <caret line="13" column="27" lean-forward="true" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding>
             <marker date="1542090592592" expanded="true" signature="215:613" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DPSider/settings.py">
+    <entry file="file://$PROJECT_DIR$/entry.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="19" column="69" lean-forward="true" selection-start-line="19" selection-start-column="69" selection-end-line="19" selection-end-column="69" />
+        <state relative-caret-position="190">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DPSider/spiders/shop_detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="68" column="24" lean-forward="true" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="24" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+            <element signature="e#236#545#0" />
+            <element signature="e#1594#1621#0" />
+            <marker date="1542131162368" expanded="true" signature="594:1404" ph="..." />
+            <marker date="1542131162368" expanded="true" signature="1884:1890" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

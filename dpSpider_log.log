@@ -1,5 +1,5 @@
 Scrapy 1.5.1 started (bot: DPSider)
-Versions: lxml 4.2.5.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.5.1, w3lib 1.19.0, Twisted 18.9.0, Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:05:16) [MSC v.1915 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0i  14 Aug 2018), cryptography 2.3.1, Platform Windows-7-6.1.7601-SP1
+Versions: lxml 4.2.5.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.5.1, w3lib 1.19.0, Twisted 18.9.0, Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0i  14 Aug 2018), cryptography 2.3.1, Platform Windows-10-10.0.17134-SP0
 Overridden settings: {'BOT_NAME': 'DPSider', 'DOWNLOAD_DELAY': 10, 'NEWSPIDER_MODULE': 'DPSider.spiders', 'SPIDER_MODULES': ['DPSider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.3964.2 Safari/537.36'}
 Enabled extensions:
 ['scrapy.extensions.corestats.CoreStats',
@@ -8,10 +8,10 @@ Enabled extensions:
 Enabled downloader middlewares:
 ['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
  'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
  'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
  'DPSider.middlewares.DpsiderSpiderMiddleware',
  'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
- 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
  'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
  'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
  'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
@@ -30,37 +30,31 @@ Spider opened
 Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
 Spider opened: shop_detail
 Telnet console listening on 127.0.0.1:6023
-redirect IP: 117.191.11.79:8080
-Redirecting (302) to <GET https://verify.meituan.com/v2/web/general_page?action=spiderindefence&requestCode=d882abc40c8944cfa876190b84353a3f&platform=1000&adaptor=auto&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttp%253A%252F%252Fwww.dianping.com%252Fshop%252F102457506&theme=dianping> from <GET https://www.dianping.com/shop/102457506>
-redirect IP: 118.173.233.150:31915
-Crawled (200) <GET https://verify.meituan.com/v2/web/general_page?action=spiderindefence&requestCode=d882abc40c8944cfa876190b84353a3f&platform=1000&adaptor=auto&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttp%253A%252F%252Fwww.dianping.com%252Fshop%252F102457506&theme=dianping> (referer: None)
-<200 https://verify.meituan.com/v2/web/general_page?action=spiderindefence&requestCode=d882abc40c8944cfa876190b84353a3f&platform=1000&adaptor=auto&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttp%253A%252F%252Fwww.dianping.com%252Fshop%252F102457506&theme=dianping>
-Spider error processing <GET https://verify.meituan.com/v2/web/general_page?action=spiderindefence&requestCode=d882abc40c8944cfa876190b84353a3f&platform=1000&adaptor=auto&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttp%253A%252F%252Fwww.dianping.com%252Fshop%252F102457506&theme=dianping> (referer: None)
-Traceback (most recent call last):
-  File "c:\users\yue.zhang\appdata\local\programs\python\python37-32\lib\site-packages\twisted\internet\defer.py", line 654, in _runCallbacks
-    current.result = callback(current.result, *args, **kw)
-  File "C:\Users\YUE.ZHANG\Desktop\DPSider\DPSider\DPSider\spiders\shop_detail.py", line 88, in parse
-    shopStar = re.search("[0-9]{2}", shopStar[0]).group()
-IndexError: list index out of range
+redirect IP: 118.174.233.90:48442
+Crawled (200) <GET https://www.dianping.com/shop/102457506> (referer: None)
+=======imgurl:{http://p1.meituan.net/wedding/610015b5ddb4a8661fc7406840f6568c58003.jpg%40990w_2048h_0e_1l%7Cwatermark%3D0} == path:{http://t.dianping.com/deal/31828837}
+=======imgurl:{//p1.meituan.net/wedding/2e084926a9c28a66e427b1ab68876e3956261.jpg%40990w_2048h_0e_1l%7Cwatermark%3D0} == path:{http://www.dianping.com/shop/102457506/material/product/3749781}
+=======imgurl:{//p1.meituan.net/wedding/6ba26a7b713a1960d2ebbb74b37c261d52448.jpg%40990w_2048h_0e_1l%7Cwatermark%3D0} == path:{http://www.dianping.com/shop/102457506/material/product/3746270}
+=======imgurl:{//p0.meituan.net/wedding/a07b5e193a5766e5ae6ae6c27a3a30d067536.jpg%40990w_2048h_0e_1l%7Cwatermark%3D0} == path:{http://www.dianping.com/shop/102457506/material/product/3738723}
+=======imgurl:{//p0.meituan.net/wedding/84b9f198308b256dca3e18d94dd5782878661.jpg%40990w_2048h_0e_1l%7Cwatermark%3D0} == path:{http://www.dianping.com/shop/102457506/material/product/3745109}
+"shopImgs":['http://p1.meituan.net/wedding/2673e861ae8850e2e5b14c029dd0dbbe1183898.jpg%40640w_480h_0e_1l%7Cwatermark%3D0', 'http://p1.meituan.net/wedding/dd1658e286a80093d3531144a4dc2fd9147228.jpg%40640w_480h_0e_1l%7Cwatermark%3D0', 'http://p1.meituan.net/wedding/dee13dc05ef9e66c7d7a6203a1ea3843269892.jpg%40640w_480h_0e_1l%7Cwatermark%3D0', 'http://p1.meituan.net/wedding/a9645a9e9a645cdc0a423f225ef19f3e670635.jpg%40640w_480h_0e_1l%7Cwatermark%3D0', 'http://p0.meituan.net/wedding/1daa156fae05b9defe8e9002abe4a683824396.jpg%40640w_480h_0e_1l%7Cwatermark%3D0'],"shopName":东鹏整体家居(福田旗舰店),"shopStar":40,"commentCount":6,"address":八卦四路422栋通泰大厦,"officeHour":营业时间：周一至周日
+09:00-21:30,"gifts":到店送玻璃水杯,"phoneNum":['4001750255'],"shopDetailUrls":['http://t.dianping.com/deal/31828837', 'http://www.dianping.com/shop/102457506/material/product/3749781', 'http://www.dianping.com/shop/102457506/material/product/3746270', 'http://www.dianping.com/shop/102457506/material/product/3738723', 'http://www.dianping.com/shop/102457506/material/product/3745109'], shopDetialImgsUrl:['http://p1.meituan.net/wedding/610015b5ddb4a8661fc7406840f6568c58003.jpg%40990w_2048h_0e_1l%7Cwatermark%3D0', 'http://p1.meituan.net/wedding/2e084926a9c28a66e427b1ab68876e3956261.jpg%40990w_2048h_0e_1l%7Cwatermark%3D0', 'http://p1.meituan.net/wedding/6ba26a7b713a1960d2ebbb74b37c261d52448.jpg%40990w_2048h_0e_1l%7Cwatermark%3D0', 'http://p0.meituan.net/wedding/a07b5e193a5766e5ae6ae6c27a3a30d067536.jpg%40990w_2048h_0e_1l%7Cwatermark%3D0', 'http://p0.meituan.net/wedding/84b9f198308b256dca3e18d94dd5782878661.jpg%40990w_2048h_0e_1l%7Cwatermark%3D0']
 Closing spider (finished)
 Dumping Scrapy stats:
-{'downloader/request_bytes': 942,
- 'downloader/request_count': 2,
- 'downloader/request_method_count/GET': 2,
- 'downloader/response_bytes': 16523,
- 'downloader/response_count': 2,
+{'downloader/request_bytes': 336,
+ 'downloader/request_count': 1,
+ 'downloader/request_method_count/GET': 1,
+ 'downloader/response_bytes': 22221,
+ 'downloader/response_count': 1,
  'downloader/response_status_count/200': 1,
- 'downloader/response_status_count/302': 1,
  'finish_reason': 'finished',
- 'finish_time': datetime.datetime(2018, 11, 13, 12, 53, 15, 780311),
- 'log_count/DEBUG': 6,
- 'log_count/ERROR': 1,
+ 'finish_time': datetime.datetime(2018, 11, 13, 17, 45, 18, 264692),
+ 'log_count/DEBUG': 9,
  'log_count/INFO': 8,
  'response_received_count': 1,
- 'scheduler/dequeued': 2,
- 'scheduler/dequeued/memory': 2,
- 'scheduler/enqueued': 2,
- 'scheduler/enqueued/memory': 2,
- 'spider_exceptions/IndexError': 1,
- 'start_time': datetime.datetime(2018, 11, 13, 12, 53, 6, 311311)}
+ 'scheduler/dequeued': 1,
+ 'scheduler/dequeued/memory': 1,
+ 'scheduler/enqueued': 1,
+ 'scheduler/enqueued/memory': 1,
+ 'start_time': datetime.datetime(2018, 11, 13, 17, 45, 15, 775110)}
 Spider closed (finished)
