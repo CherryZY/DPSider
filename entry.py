@@ -6,8 +6,16 @@
 @desc:
 '''
 
+import threading
 from scrapy.cmdline import execute
-execute(['scrapy', 'crawl', 'shop_detail'])
+
+
+if __name__ == '__main__':
+    # execute(['scrapy', 'crawl', 'classify_list'])
+    # execute(['scrapy', 'crawl', 'shop_list'])
+    execute(['scrapy', 'crawl', 'shop_detail'])
+
+
 
 
 
