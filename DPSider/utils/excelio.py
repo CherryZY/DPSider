@@ -19,7 +19,6 @@ def getCurrentDate():
  将数据写入并生成 fileName 的文件
 '''
 def writeDataToExcel(fileName, result, addTimeSuffix = True):
-    # 实例化一个Workbook()对象(即excel文件)
     wbk = xlwt.Workbook()
     # 新建一个名为Sheet1的excel sheet.cell_overwrite_ok = True是为了能对同一个单元格重复操作。
     sheet = wbk.add_sheet('Sheet1',cell_overwrite_ok=True)

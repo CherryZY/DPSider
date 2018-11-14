@@ -51,7 +51,7 @@ class DpsiderSpiderMiddleware(UserAgentMiddleware):
         PROXY_IPS = get_proxy_ips_list()
         ip = random.choice(PROXY_IPS)
         logging.debug("redirect IP: " + ip)
-        # request.meta['proxy'] = url_prefix + ip
+        request.meta['proxy'] = url_prefix + ip
 
     def process_spider_input(self, response, spider):
         # Called for each response that goes through the spider
@@ -68,6 +68,8 @@ class DpsiderSpiderMiddleware(UserAgentMiddleware):
             yield i
 
     def process_spider_exception(self, response, exception, spider):
+
+        logging.error("===============================exception:", exception)
         # Called when a spider or process_spider_input() method
         # (from other spider middleware) raises an exception.
 

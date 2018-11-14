@@ -15,6 +15,7 @@ class ShopDetail(scrapy.Item):
     shopMainImgs = scrapy.Field()
     shopNavImgs = scrapy.Field()
     shopName = scrapy.Field()
+    # 星级
     shopStar = scrapy.Field()
     commentCount = scrapy.Field()
     shopAddress = scrapy.Field()
@@ -23,6 +24,9 @@ class ShopDetail(scrapy.Item):
     shopGift = scrapy.Field()
     shopDetailImgs = scrapy.Field()
     shopDetailUrls = scrapy.Field()
+    # 店铺信息
+    shopInfoText = scrapy.Field()
+    shopLocation = scrapy.Field()
 
 
 '''
@@ -52,11 +56,7 @@ class ShopListItem(scrapy.Item):
     groupBuyText = scrapy.Field()
     # 团购信息url
     groupBuyUrl = scrapy.Field()
-    # 点评数量
-    commentCount = scrapy.Field()
-    # 星级
-    starCount = scrapy.Field()
-    pass
+    shopLocation = scrapy.Field()
 
 
 

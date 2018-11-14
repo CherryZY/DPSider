@@ -43,6 +43,9 @@ class FileIO:
         elif readWay == FileReadWayEnum.READ_LINES:
             return str(self.__file.readlines())
 
+    def load(self):
+        return json.load(self.__file)
+
     def write(self, content):
         logging.debug("[DPSider.utils.fileio.FileIO#write] in param{%s}", content)
         strItems = str(content)
@@ -54,14 +57,3 @@ class FileIO:
 
     def __del__(self):
         self.__file.close()
-
-
-if __name__ == '__main__':
-    str = "6条点评"
-    print(re.search("[0-9]", str))
-    # f = FileIO(fileConfig['classFile'])
-#     # dict = str(f.read())
-#     # a = ast.literal_eval(dict)
-#     # for it in a["shop_classify"]:
-#     #     print(it["url"])
-

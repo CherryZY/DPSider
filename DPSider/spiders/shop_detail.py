@@ -1,24 +1,25 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import ast
-from DPSider.configs import logging, fileConfig, url_prefix
+from DPSider.configs import logging, fileConfig, url_prefix, USER_AGENT
 from DPSider.utils.fileio import FileIO
 import re
+import random
+from DPSider.items import ShopDetail
+
 
 '''
 读取商铺列表信息-路径: shopList.json文件，获取要爬取的店铺详情链接
 '''
 def read_shop_list():
     f = FileIO(fileConfig['listFile'])
-    result = f.read()
-    logging.debug("[read_shop_list] read info :%s" % result)
+    result = f.load()
     if not result and result == '':
         return []
-    classifyUrlList = []
     type(result)
-    for it in result:
-        classifyUrlList.append(it["shopPath"])
-    return classifyUrlList
+    resultArray = ast.literal_eval(result)
+    return resultArray
+
 
 '''
 解析团购券信息
@@ -38,72 +39,118 @@ def parse_group_coupon(result):
         groupBuyCouponsInfo.append(g)
     return groupBuyCouponsInfo
 
+
+'''
+初始化店铺map
+'''
+def get_shop_path_map(shop_arr):
+    shop_path_map = {}
+    if not shop_arr and len(shop_arr) < 1:
+        return None
+    for shop in shop_arr:
+        if shop and shop["shopPath"] :
+            shop_path_map[shop["shopPath"]] = shop
+    return shop_path_map
+
 '''
 店铺详情html解析爬取
 '''
 class ShopDetailSpider(scrapy.Spider):
+
+    __shopMap = {}
     name = 'shop_detail'
     allowed_domains = ['dianping.com']
-    start_urls = ["https://www.dianping.com/shop/102457506"]
+    start_urls = ['http://www.dianping.com/shop/82523000']
 
-    # def start_requests(self):
-    #     pages = []
-    #     classifyItems = read_shop_list()
-    #     if not classifyItems:
-    #         return
-    #     for url in classifyItems:
-    #         page = scrapy.Request(url_prefix + url)
-    #         pages.append(page)
-    #     return pages
+    # 预定义start_urls
+    def start_requests(self):
+        url_list = []
+        shop_list = read_shop_list()
+        self.__shopMap = get_shop_path_map(shop_list)
+        if self.__shopMap:
+            for (k, v) in self.__shopMap.items():
+                url_list.append(k)
+        pages = []
+        if not url_list or len(url_list) < 1:
+            page = scrapy.Request("https://www.dianping.com/shop/102457506")
+            pages.append(page)
+            return pages
+        logging.debug("request urls:{%s}" % url_list)
+        userAgent = random.choice(USER_AGENT)
+        for url in url_list:
+            if not url.startswith("http://") and not url.startswith("https://"):
+                url = url_prefix + url
+            page = scrapy.Request(userAgent, url)
+            pages.append(page)
+        return pages
 
     def parse(self, response):
-        logging.debug(response)
+        shopDetailItem = ShopDetail()
+        logging.debug(response.request.url)
+        logging.debug(response.status)
+        if response.request.url.startswith("https://verify.meituan.com/") or response.status == 403:
+            raise Exception("爬取次数过多，ban....")
+        shopBasicListInfo = self.__shopMap[response.request.url]
+        logging.debug(shopBasicListInfo)
         result = response.xpath('//div[@id="main-body"]/div[@class="shop-wrap"]')
+        # 从request后缀获取
+        shopId = shopBasicListInfo["shopId"]
         shopImgs = result.xpath('./div[@class="shop-main clearfix"]/div[@class="slider-wrapper J_wrapPic"]/div[@class="slider"]/img')
-        # 店铺主图（大图）
         shopMainImgs = []
         for img in shopImgs:
             try:
                 shopMainImgs.append(url_prefix + img.xpath('./@src').extract()[0].strip("//"))
             except Exception as e:
-                logging.info("[DPSider.spiders.shop_detail.ShopDetailSpider#parse] parse img info:{%s}",e)
+                logging.info("[DPSider.spiders.shop_detail.ShopDetailSpider#parse] parse img info:{%s}", e)
                 continue
-        # 店铺主图的导航图（小图）
-        # shopNavImgs = []
-        # sliderNavImgs = result.xpath('./div[@class="shop-main clearfix"]/div[@class="slider-wrapper J_wrapPic"]/div[@class="slider-nav"]/span')
-        # logging.debug("================" + str(sliderNavImgs.extract()))
-        # for sliderNavImg in sliderNavImgs:
-        #     logging.debug("================" + sliderNavImg)
-        #     try:
-        #         shopNavImgs.append(sliderNavImg.xpath('./img/@src').extract_first().strip("//"))
-        #     except Exception as e:
-        #         logging.info("[DPSider.spiders.shop_detail.ShopDetailSpider#parse] parse NavImg info:{%s}",e)
-        #         continue
-
-        # 店铺基本信息
-        shopBasicInfo = result.xpath('./div[@class="shop-main clearfix"]/div[@class="shop-brief"]/div[@id="J_boxDetail"]/div[@class="shop-info"]')
+        shopBasicInfo = result.xpath(
+            './div[@class="shop-main clearfix"]/div[@class="shop-brief"]/div[@id="J_boxDetail"]/div[@class="shop-info"]')
         shopName = shopBasicInfo.xpath('./div[@class="shop-name"]/h1/text()').extract_first()
-        shopStar = shopBasicInfo.xpath('./div[@class="comment-rst"]/span/@class').extract()
-        commentCount = shopBasicInfo.xpath('./div[@class="comment-rst"]/a/text()').extract()
-        shopStar = re.search("[0-9]{2}", shopStar[0]).group()
-        commentCount = re.search("[0-9]+", commentCount[0]).group()
+        shopStar = shopBasicInfo.xpath('./div[@class="comment-rst"]/span/@class').extract_first()
+        # commentCount = shopBasicInfo.xpath('./div[@class="comment-rst"]/a/text()').extract()
+        shopStar = re.search("[0-9]{1,2}", shopStar).group()
         shopAddress = shopBasicInfo.xpath('./p[@class="shop-contact address"]/span/@title').extract_first()
         shopOfficeHours = shopBasicInfo.xpath('./p[@class="shop-contact"]/text()').extract_first()
-        shopOfficeHours = shopOfficeHours.strip().strip('\n')
+        if shopOfficeHours:
+            shopOfficeHours = shopOfficeHours.strip().replace('\n', " ")
         shopPhoneNum = shopBasicInfo.xpath('./div[@class="shop-contact telAndQQ"]/span/strong/text()').extract()
-        shopGifts = result.xpath('./div[@class="shop-main clearfix"]/div[@class="shop-brief"]/div[@class="shop-gifts clearfix"]/div/span/text()').extract_first()
-        # TODO：团购券信息
-        # 店铺详情图片
-        shopDetialImgsUrl = []
+        shopGifts = result.xpath(
+            './div[@class="shop-main clearfix"]/div[@class="shop-brief"]/div[@class="shop-gifts clearfix"]/div/span/text()').extract_first()
+        shopDetailImgsUrl = []
         shopDetailUrls = []
-        shopDetailImgs = response.xpath('//div[@class="feat-slide"]/div[@class="slider-box J_wrapPic"]/ul/li')
-        for img in shopDetailImgs:
-            path = img.xpath('/@href').extract()
-            imgurl = img.xpath('/@src').extract()
-            shopDetialImgsUrl.append(url_prefix + imgurl.strip('//'))
-            shopDetailUrls.append(path)
+        shopDetailImgPath_1 = response.xpath('//div[@class="slider-box J_wrapPic"]/ul/li/a/@href').extract_first()
+        shopDetailImgUrl_1 = response.xpath('//div[@class="slider-box J_wrapPic"]/ul/li/a/img/@src').extract_first()
+        shopLocationXPath = response.xpath('//div[@class="shop-location"]/span')
+        shopLocation = []
+        if shopLocationXPath and len(shopLocationXPath) > 0:
+            for sl in shopLocationXPath:
+                shopLocation.append(sl.xpath('./text()'))
 
-        logging.debug('"shopImgs":%s,"shopName":%s,"shopStar":%s,"commentCount":%s,"address":%s,"officeHour":%s,"gifts":%s,"phoneNum":%s,"shopDetailUrls":%s, shopDetialImgsUrl:%s' %
-                      (shopMainImgs, shopName, shopStar, commentCount, shopAddress, shopOfficeHours, shopGifts, shopPhoneNum, shopDetailUrls, shopDetialImgsUrl))
+        shopDetailItem['shopId'] = shopId
+        shopDetailItem['shopMainImgs'] = shopMainImgs
+        shopDetailItem['shopName'] = shopName
+        shopDetailItem['shopStar'] = shopStar
+        shopDetailItem['shopAddress'] = shopAddress
+        shopDetailItem['shopOfficeHours'] = shopOfficeHours
+        if shopPhoneNum and len(shopPhoneNum) > 0:
+            shopDetailItem['shopPhoneNum'] = shopPhoneNum[0]
+        shopDetailItem['shopGift'] = shopGifts
+        # shopDetailItem['shopLocation'] = shopBasicListInfo['shopLocation']
+        shopDetailItem['shopInfoText'] = shopBasicListInfo['shopInfoText']
 
-        pass
+        if shopDetailImgPath_1 and shopDetailImgUrl_1:
+            shopDetailImgUrl_1 = url_prefix + shopDetailImgUrl_1.strip('//')
+            shopDetailImgsUrl.append(shopDetailImgUrl_1)
+            shopDetailUrls.append(shopDetailImgPath_1)
+            shopDetailImgs = response.xpath('//div[@class="slider-box J_wrapPic"]/textarea[@class="Hide"]/li')
+            for img in shopDetailImgs:
+                path = img.xpath('./a/@href').extract_first()
+                imgurl = img.xpath('./a/img/@src').extract_first()
+                shopDetailImgsUrl.append(url_prefix + imgurl.strip('//'))
+                shopDetailUrls.append(path)
+
+            shopDetailItem['shopDetailImgs'] = shopDetailImgsUrl
+            shopDetailItem['shopDetailUrls'] = shopDetailUrls
+
+        logging.debug(shopDetailItem)
+        yield shopDetailItem

@@ -12,7 +12,6 @@ import re
 def read_classify_list():
     f = FileIO(fileConfig['classFile'])
     result = f.read()
-    logging.debug(result)
     if not result and result == '':
         return []
     classifyUrlList = []
@@ -28,7 +27,7 @@ def read_classify_list():
 class ShopListSpider(scrapy.Spider):
     name = 'shop_list'
     allowed_domains = ['dianping.com']
-    start_urls = ['http://dianping.com/']
+    start_urls = ['http://www.dianping.com/shenzhen/ch90/g34035p50']
 
     def start_requests(self):
         pages = []
@@ -40,44 +39,37 @@ class ShopListSpider(scrapy.Spider):
             pages.append(page)
         return pages
 
-
     def parse(self, response):
         if not response:
             return
         results = response.xpath('//div[@class="shop-list"]/li')
         for result in results:
-            shopMainInfo = result.xpath('./div[@class="shop-info shop-info_materials"]')
-            # 店铺图片url
-            picUrl = result.xpath('./a/img/@src').extract()
-            # 店铺路径
-            shopPath = result.xpath('./a/@href').extract()[0].strip('//')
             # 店铺id
             shopId = result.xpath('./@data-id').extract()[0].strip()
+            # 店铺图片url
+            picUrl = result.xpath('.//a[@class="shop-images"]/img/@src').extract()
+            picUrl1 = result.xpath('.//a[@class="shop-images"]/img/@data-src').extract()
+            if not picUrl:
+                picUrl = picUrl1
+            # 店铺路径
+            shopPath = result.xpath('.//a/@href').extract()[0]
             # 店铺名称
-            shopName = shopMainInfo.xpath('./div[@class="shop-main"]/div[@class="shop-title"]/h3/a/text()').extract()
+            shopName = result.xpath('.//div[@class="shop-title"]/h3/a/text()').extract()
             # 店铺服务及区域信息
-            shopInfoText = shopMainInfo.xpath('./div[@class="shop-main"]/div[@class="shop-info-text-i"]/span')
+            shopInfoText = result.xpath('.//div[@class="shop-info-text-i" or @class="row shop-info-text-i"]/span')
             shopInfoTextList = []
-            for shopInfo in shopInfoText:
-                shopInfoTextList.append(shopInfo.xpath('./text()').extract()[0])
-            commentCount = ''
-            starCount = ''
+            if shopInfoText and len(shopInfoText) > 0:
+                for shopInfo in shopInfoText:
+                    shopInfoTextList.append(shopInfo.xpath('./text()').extract())
             # 团购url
-            groupBuyTextUrl = shopMainInfo.xpath('./div[@class="shop-sales-promotion clearfix"]/a/@href').extract()
+            groupBuyTextUrl = result.xpath('.//div[@class="shop-sales-promotion clearfix"]/a/@href').extract()
             # 团购信息
-            groupBuyText = shopMainInfo.xpath('./div[@class="shop-sales-promotion clearfix"]/a/p').extract()
-            comment = shopMainInfo.xpath('./div[@class="shop-main"]/div[@class="user-comment"]')
-            comment_star = comment.xpath('./span/@class').extract()
-            if comment_star and len(comment_star) > 0:
-                starCount = re.search("[0-9]", comment_star[0]).group()
-            comment_count = comment.xpath('./a/text()').extract()
-            if comment_count and len(comment_count) > 0:
-                commentCount = re.search("[0-9]", comment_count[0]).group()
+            groupBuyText = result.xpath('.//div[@class="shop-sales-promotion clearfix"]/a/p').extract()
             shopListItem = ShopListItem()
             shopListItem['shopId'] = shopId
             if shopName and len(shopName) > 0:
                 shopListItem['name'] = shopName[0]
-            shopListItem['shopPath'] = url_prefix + shopPath.strip()
+            shopListItem['shopPath'] = url_prefix + shopPath.strip('//')
             if picUrl and len(picUrl) > 0:
                 shopListItem['picUrl'] = url_prefix + picUrl[0].strip('//')
             shopListItem['shopInfoText'] = shopInfoTextList
@@ -89,8 +81,6 @@ class ShopListSpider(scrapy.Spider):
                 for index in range(len(groupBuyTextUrl)):
                     groupBuyTextUrl[index] = groupBuyTextUrl[index].strip().strip('//')
             shopListItem['groupBuyUrl'] = groupBuyTextUrl
-            shopListItem['commentCount'] = commentCount
-            shopListItem['starCount'] = starCount
             yield shopListItem
         # 递归遍历下一页
         page_urls = response.xpath('.//div[@class="pages"]/a[@title="下一页"]/@href')

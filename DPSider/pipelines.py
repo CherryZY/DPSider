@@ -25,22 +25,11 @@ class DpsiderPipeline(object):
         pass
 
     def __del__(self):
-        if self.__items_classify and self.__items_areas and len(self.__items_classify) > 0:
-            self.__items['shop_classify'] = self.__items_classify
-            self.__items['shop_area'] = self.__items_areas
-            self.__f = FileIO(fileConfig['classFile'], "w+")
-            self.__f.write(self.__items)
-        if self.__items_shop_list and len(self.__items_shop_list) > 0:
-            self.__f = FileIO(fileConfig['listFile'])
-            self.__f.write(self.__items_shop_list)
-        if self.__items_shop_detail and len(self.__items_shop_detail) > 0:
-            self.__f = FileIO(fileConfig['detailFile'], "r+")
-            self.__f.write(self.__items_shop_detail)
-
+        pass
 
     def process_item(self, item, spider):
         self.__spider = spider.name
-        logging.debug("[DPSider.pipelines.DpsiderPipeline] in param:{%s,%s}", item, spider.name)
+        # logging.debug("[DPSider.pipelines.DpsiderPipeline] in param:{%s}", item)
         if spider.name == 'classify_list':
             if item['type'] == 'classify':
                 self.__items_classify.append(item)
@@ -50,3 +39,25 @@ class DpsiderPipeline(object):
             self.__items_shop_list.append(item)
         elif spider.name == 'shop_detail':
             self.__items_shop_detail.append(item)
+
+
+    def open_spider(self, spider):
+        self.__spider = spider.name
+        if self.__spider == "classify_list":
+            self.__f = FileIO(fileConfig['classFile'], "w+", True)
+        elif self.__spider == "shop_list":
+            self.__f = FileIO(fileConfig['listFile'], "w+", True)
+        elif self.__spider == "shop_detail":
+            self.__f = FileIO(fileConfig['detailFile'], "r+")
+
+    def close_spider(self, spider):
+        if self.__items_classify and self.__items_areas and len(self.__items_classify) > 0:
+            self.__items['shop_classify'] = self.__items_classify
+            self.__items['shop_area'] = self.__items_areas
+            self.__f.write(self.__items)
+        if self.__items_shop_list and len(self.__items_shop_list) > 0:
+            logging.debug(self.__items_shop_list)
+            self.__f.write(self.__items_shop_list)
+        if self.__items_shop_detail and len(self.__items_shop_detail) > 0:
+            logging.debug(self.__items_shop_detail)
+            # self.__f.write(self.__items_shop_detail)

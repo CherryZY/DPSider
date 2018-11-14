@@ -10,18 +10,18 @@
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = 'DPSider'
-
+# COMMANDS_MODULE = 'DPSider.commands'
 SPIDER_MODULES = ['DPSider.spiders']
 NEWSPIDER_MODULE = 'DPSider.spiders'
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.3964.2 Safari/537.36'
 DOWNLOADER_MIDDLEWARES = {
     'scrapy.downloadermiddleware.useragent.UserAgentMiddleware': None,
     'DPSider.middlewares.DpsiderSpiderMiddleware': 400,
-    'scrapy.contrib.downloadermiddleware.retry.RetryMiddleware': 351,
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': 351,
 }
 # FEED_EXPORT_ENCODING = 'unicode'
 
-DOWNLOAD_DELAY = 10
+# DOWNLOAD_DELAY = 10
 
 ITEM_PIPELINES = {'DPSider.pipelines.DpsiderPipeline': 200}
 MY_USER_AGENT = [
