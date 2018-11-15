@@ -8,12 +8,13 @@
 
 import threading
 from scrapy.cmdline import execute
-
+import re
 
 if __name__ == '__main__':
     # execute(['scrapy', 'crawl', 'classify_list'])
     # execute(['scrapy', 'crawl', 'shop_list'])
-    execute(['scrapy', 'crawl', 'shop_detail'])
+    # execute(['scrapy', 'crawl', 'shop_detail'])
+    execute(['scrapy', 'crawl', 'imSpider'])
 
 
 

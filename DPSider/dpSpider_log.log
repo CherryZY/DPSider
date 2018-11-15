@@ -1,0 +1,57 @@
+Scrapy 1.5.1 started (bot: DPSider)
+Versions: lxml 4.2.5.0, libxml2 2.9.5, cssselect 1.0.3, parsel 1.5.1, w3lib 1.19.0, Twisted 18.9.0, Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 14:05:16) [MSC v.1915 32 bit (Intel)], pyOpenSSL 18.0.0 (OpenSSL 1.1.0i  14 Aug 2018), cryptography 2.3.1, Platform Windows-7-6.1.7601-SP1
+Overridden settings: {'BOT_NAME': 'DPSider', 'CONCURRENT_REQUESTS': 15, 'NEWSPIDER_MODULE': 'DPSider.spiders', 'RETRY_HTTP_CODES': [500, 502, 503, 504, 522, 524, 408, 403, 404], 'RETRY_TIMES': 5, 'SPIDER_MODULES': ['DPSider.spiders'], 'USER_AGENT': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36'}
+Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'DPSider.middlewares.DpsiderRetryMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'DPSider.middlewares.DpsiderSpiderMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+Enabled item pipelines:
+['DPSider.pipelines.DpsiderPipeline']
+Spider opened
+Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+Spider opened: imSpider
+Telnet console listening on 127.0.0.1:6023
+proxyServer:{http://http-pro.abuyun.com:9010}|proxyAuth:{Basic SDE1Uzg0NTQ5MEEwODNFUDo0MTJGQjBDQUM1QzJBM0M1}
+Redirecting (302) to <GET https://verify.meituan.com/v2/web/general_page?action=spiderindefence&requestCode=52b651f103e2444d8d948dd70b59dd51&platform=1000&adaptor=auto&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttp%253A%252F%252Fwww.dianping.com%252Fshop%252F102457506&theme=dianping> from <GET https://www.dianping.com/shop/102457506>
+proxyServer:{http://http-pro.abuyun.com:9010}|proxyAuth:{Basic SDE1Uzg0NTQ5MEEwODNFUDo0MTJGQjBDQUM1QzJBM0M1}
+Crawled (200) <GET https://verify.meituan.com/v2/web/general_page?action=spiderindefence&requestCode=52b651f103e2444d8d948dd70b59dd51&platform=1000&adaptor=auto&succCallbackUrl=https%3A%2F%2Foptimus-mtsi.meituan.com%2Foptimus%2FverifyResult%3ForiginUrl%3Dhttp%253A%252F%252Fwww.dianping.com%252Fshop%252F102457506&theme=dianping> (referer: None)
+Closing spider (finished)
+Dumping Scrapy stats:
+{'downloader/request_bytes': 878,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 16522,
+ 'downloader/response_count': 2,
+ 'downloader/response_status_count/200': 1,
+ 'downloader/response_status_count/302': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 11, 15, 10, 4, 3, 282246),
+ 'log_count/DEBUG': 5,
+ 'log_count/INFO': 8,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2018, 11, 15, 10, 4, 1, 189246)}
+Spider closed (finished)

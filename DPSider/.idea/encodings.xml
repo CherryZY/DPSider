@@ -3,5 +3,7 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/class.json" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/dpSpider_log.log" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/sd_list.json" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/shopDetailList.json" charset="GBK" />
   </component>
 </project>
